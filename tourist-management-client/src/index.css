@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans text-ink-800 antialiased bg-white;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+    color: inherit;
+  }
+  ::selection {
+    @apply bg-brand-500/20 text-brand-900;
+  }
+}
+
+@layer components {
+  /* ---------- Layout ---------- */
+  .container-page {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .section {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+  .section-sm {
+    @apply py-12 sm:py-16;
+  }
+
+  /* ---------- Typography ---------- */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-700 bg-brand-50 rounded-full ring-1 ring-brand-100;
+  }
+  .heading-xl {
+    @apply text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight;
+  }
+  .heading-lg {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight;
+  }
+  .heading-md {
+    @apply text-2xl sm:text-3xl font-bold leading-tight tracking-tight;
+  }
+  .heading-sm {
+    @apply text-xl sm:text-2xl font-semibold leading-snug;
+  }
+  .lead {
+    @apply text-base sm:text-lg text-ink-600 leading-relaxed;
+  }
+  .muted {
+    @apply text-sm text-ink-500;
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-600 via-brand-500 to-teal-500;
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn-modern {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary-modern {
+    @apply btn-modern bg-brand-600 hover:bg-brand-700 text-white shadow-soft hover:shadow-glow active:scale-[0.98];
+  }
+  .btn-secondary-modern {
+    @apply btn-modern bg-white hover:bg-ink-50 text-ink-800 ring-1 ring-ink-200 hover:ring-ink-300 shadow-soft active:scale-[0.98];
+  }
+  .btn-accent-modern {
+    @apply btn-modern bg-accent-500 hover:bg-accent-600 text-white shadow-soft active:scale-[0.98];
+  }
+  .btn-ghost-modern {
+    @apply btn-modern text-ink-700 hover:bg-ink-100 active:scale-[0.98];
+  }
+  .btn-danger-modern {
+    @apply btn-modern bg-red-500 hover:bg-red-600 text-white shadow-soft active:scale-[0.98];
+  }
+  .btn-lg-modern {
+    @apply px-7 py-3.5 text-base rounded-xl;
+  }
+
+  /* ---------- Cards ---------- */
+  .card-modern {
+    @apply bg-white rounded-2xl shadow-soft ring-1 ring-ink-100 overflow-hidden transition-all duration-300;
+  }
+  .card-modern-hover {
+    @apply hover:shadow-soft-lg hover:-translate-y-1 hover:ring-ink-200;
+  }
+  .card-glass {
+    @apply bg-white/70 backdrop-blur-md rounded-2xl ring-1 ring-white/60 shadow-soft-lg;
+  }
+
+  /* ---------- Forms ---------- */
+  .input-modern {
+    @apply w-full px-4 py-2.5 text-sm bg-white border border-ink-200 rounded-xl text-ink-900 placeholder:text-ink-400 transition-colors focus:outline-none focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10;
+  }
+  .textarea-modern {
+    @apply input-modern resize-none;
+  }
+  .label-modern {
+    @apply block text-sm font-medium text-ink-700 mb-1.5;
+  }
+  .form-group {
+    @apply space-y-1.5;
+  }
+
+  /* ---------- Badges ---------- */
+  .badge-modern {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-full ring-1 ring-inset;
+  }
+  .badge-success {
+    @apply badge-modern bg-emerald-50 text-emerald-700 ring-emerald-200;
+  }
+  .badge-warning {
+    @apply badge-modern bg-amber-50 text-amber-700 ring-amber-200;
+  }
+  .badge-danger {
+    @apply badge-modern bg-red-50 text-red-700 ring-red-200;
+  }
+  .badge-info {
+    @apply badge-modern bg-sky-50 text-sky-700 ring-sky-200;
+  }
+  .badge-neutral {
+    @apply badge-modern bg-ink-100 text-ink-700 ring-ink-200;
+  }
+
+  /* ---------- Table ---------- */
+  .table-modern {
+    @apply w-full text-sm;
+  }
+  .table-modern thead th {
+    @apply px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-ink-500 bg-ink-50 border-b border-ink-200;
+  }
+  .table-modern tbody td {
+    @apply px-4 py-4 border-b border-ink-100 text-ink-800;
+  }
+  .table-modern tbody tr {
+    @apply transition-colors hover:bg-ink-50/50;
+  }
+
+  /* ---------- Navigation ---------- */
+  .nav-link {
+    @apply relative text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors;
+  }
+  .nav-link-active {
+    @apply text-brand-600;
+  }
+
+  /* ---------- Misc ---------- */
+  .divider-soft {
+    @apply h-px bg-gradient-to-r from-transparent via-ink-200 to-transparent;
+  }
+  .skeleton-shimmer {
+    background: linear-gradient(90deg, #f1f5f9 0%, #e2e8f0 50%, #f1f5f9 100%);
+    background-size: 1000px 100%;
+    @apply animate-shimmer rounded-lg;
+  }
+  .glass-nav {
+    @apply bg-white/80 backdrop-blur-xl ring-1 ring-black/5;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(rgb(15 23 42 / 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(15 23 42 / 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .bg-dot {
+    background-image: radial-gradient(rgb(15 23 42 / 0.08) 1px, transparent 1px);
+    background-size: 16px 16px;
+  }
+}
+
+/* ---------- Third-party overrides ---------- */
+.react-datepicker-wrapper,
+.react-datepicker__input-container {
+  @apply w-full;
+}
+.react-datepicker__input-container input {
+  @apply input-modern;
+}
+
+/* Keen-slider dots */
+.dots {
+  @apply flex justify-center gap-2 mt-6;
+}
+.dot {
+  @apply w-2 h-2 rounded-full bg-ink-300 transition-all;
+}
+.dot.active {
+  @apply bg-brand-500 w-6;
+}
+
+/* Swiper */
+.swiper-pagination-bullet {
+  @apply bg-ink-300 opacity-100 !important;
+}
+.swiper-pagination-bullet-active {
+  @apply bg-brand-500 w-6 rounded-full !important;
+}
+
+/* React Tabs */
+.react-tabs__tab-list {
+  @apply flex gap-2 border-b border-ink-200 mb-6;
+}
+.react-tabs__tab {
+  @apply px-4 py-2.5 text-sm font-semibold text-ink-500 border-b-2 border-transparent cursor-pointer transition-colors hover:text-ink-800;
+  list-style: none;
+}
+.react-tabs__tab--selected {
+  @apply text-brand-600 border-brand-600;
+}
